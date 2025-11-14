@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My KPIs Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "green-status": "#28A745",
+              "yellow-status": "#FFC107",
+              "red-status": "#DC3545",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex flex-1">
+<!-- SideNavBar -->
+<aside class="flex-col h-screen sticky top-0 w-64 bg-[#111722] p-4 hidden lg:flex">
+<div class="flex flex-col justify-between h-full">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Project Tracker Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtzyURAzyXrwcIdos7iinlPmcPn9nqH9dcnxbqf0rdreTiPdz2qGqHwESSIyClv5wyy0nVkPQisIINvPXvLCn7fNf3yJaKLlMIWLWe-H4kHe12HHg1fdQIxHF2OnEwKaV7Qk4RR4_3wE_9FB0893S_4zDWMpPZPKR0DdF0aV6OCfXHokrdOzEtaEy9lnjj1gBwyzVapFYDZgWlnogLm8RcqWk8qoYnXPvK5AUL7mLhhKiEZoalBpzJwnww3sk0ID7k4s-t3sw34Cg");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">Project Tracker</h1>
+<p class="text-gray-400 dark:text-[#92a4c9] text-sm font-normal leading-normal">Team Workspace</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 dark:text-white hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 dark:text-white hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">folder</span>
+<p class="text-sm font-medium leading-normal">Projects</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 dark:text-white hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">task_alt</span>
+<p class="text-sm font-medium leading-normal">Tasks</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 dark:text-white hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">warning</span>
+<p class="text-sm font-medium leading-normal">Risks</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary dark:bg-[#232f48] dark:text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assessment</span>
+<p class="text-sm font-medium leading-normal">My KPIs</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Project</span>
+</button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 dark:text-white hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 dark:text-white hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">help</span>
+<p class="text-sm font-medium leading-normal">Help</p>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 lg:p-10 bg-background-light dark:bg-background-dark">
+<div class="flex flex-col max-w-7xl mx-auto">
+<!-- PageHeading -->
+<header class="flex flex-wrap justify-between items-center gap-4">
+<div class="flex flex-col gap-1">
+<p class="text-gray-900 dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">My KPIs</p>
+<p class="text-gray-500 dark:text-[#92a4c9] text-base font-normal leading-normal">A quick overview of your individual performance against objectives.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white dark:bg-[#232f48] text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] border border-gray-200 dark:border-gray-700">
+<span class="truncate">Add KPI</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDwzmWOwkS-gEXJwqk4h82scNIX4IvkwHFiTqBxOwKTYFMjph7v8Siycx6qun99sJoWq0gclcKuGbn9Cvm0auh0FV40Lp7QgVLdol84uTuhWeS7tKb6YD31BjmNHkY9iEmlwQAvoRjtWRv5D4gP4i97qrNkdcSee657ojo_eh1oAyv1f-NstbZ0aHu2xktyaUV9_-tjQYTUAOrJ5vgOJlf7bcUJQeKtDiNItu1EE-TCVtvHtQ1QtZpyjXoGKeZd1o6tXkNa9sPofGo");'></div>
+</div>
+</header>
+<!-- Toolbar & Filters -->
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 border-b border-gray-200 dark:border-gray-700 pb-4">
+<!-- Chips / Filters -->
+<div class="flex gap-3 overflow-x-auto">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#232f48] px-3 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-700 dark:text-white text-sm font-medium leading-normal">Status</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#232f48] px-3 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-700 dark:text-white text-sm font-medium leading-normal">Time Period</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#232f48] px-3 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-700 dark:text-white text-sm font-medium leading-normal">Project</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-white text-base">expand_more</span>
+</button>
+</div>
+<!-- Toolbar -->
+<div class="flex items-center gap-2">
+<div class="relative w-full max-w-xs">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="block w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#232f48] pl-10 pr-3 py-2 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm" placeholder="Search KPIs..." type="text"/>
+</div>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">download</span>
+<span class="truncate">Export</span>
+</button>
+</div>
+</div>
+<!-- Table -->
+<div class="mt-6 @container">
+<div class="overflow-hidden rounded-xl border border-gray-200 dark:border-[#324467] bg-white dark:bg-[#111722]">
+<div class="overflow-x-auto">
+<table class="w-full min-w-max">
+<thead>
+<tr class="bg-gray-50 dark:bg-[#192233]">
+<th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-white w-[25%]">KPI Title</th>
+<th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-white">Owner</th>
+<th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-white">Current / Target</th>
+<th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-white w-[15%]">Progress</th>
+<th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-white">Status</th>
+<th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-white">Trend</th>
+<th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-white">Last Updated</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-[#324467]">
+<tr>
+<td class="px-4 py-3 text-gray-900 dark:text-white text-sm font-medium">Code Review Turnaround Time</td>
+<td class="px-4 py-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8" data-alt="Avatar of Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7nBAVl5bs-33vgsW82RmeIznr3VJVXyhU6lrv-0EGsAJYGzTOANOxKr-An7qYMEhAIidx1Bh1S48q4CxDHyTB2sbezbMc8r6kGkJ91UcbGeCKHBfWbQj3vb2hUbqooRYvP6jDjoeIkr6Jyt62_DGsgeXAPTurb7mHfI4eqyVbam-pkZ8FQE7rS29pZO5mXNtP1yK65mNH2O-UE6Du9LkRA6FJgzse1ZGWmAGsDfl9vgCfYEDLUcdRnVpccubFmJDnENx7QMYn4aE");'></div>
+</td>
+<td class="px-4 py-3 text-gray-500 dark:text-[#92a4c9] text-sm">8 hours / &lt; 12 hours</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="w-full overflow-hidden rounded-full bg-gray-200 dark:bg-[#324467] h-1.5"><div class="h-full rounded-full bg-green-status" style="width: 75%;"></div></div>
+<p class="text-gray-700 dark:text-white text-sm font-medium">75%</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="inline-flex items-center gap-2 rounded-full bg-green-status/10 px-3 py-1 text-sm font-medium text-green-status">
+<div class="h-2 w-2 rounded-full bg-green-status"></div>
+                                                    On Track
+                                                </div>
+</td>
+<td class="px-4 py-3">
+<span class="material-symbols-outlined text-red-status align-middle">arrow_downward</span>
+</td>
+<td class="px-4 py-3 text-gray-500 dark:text-[#92a4c9] text-sm">2 hours ago</td>
+</tr>
+<tr>
+<td class="px-4 py-3 text-gray-900 dark:text-white text-sm font-medium">API Uptime</td>
+<td class="px-4 py-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8" data-alt="Avatar of Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBt1K3a1pU8FzJ8IFCyFzikSTcGLfJx5BFe7XvFaDOYeSsGwbr4yiUdLO3HKZ79G4avXzx0EeYl1-1JoeOpYKNMZlAgtVBwOdFPNyBs6jRU-ruWnFz3Hn9AI12kakzNtZ3OzpM1vQBFyOujQmJbVxYafK0xms5Ifn_bwui33cX1QValQ-2VNSgiX4mGgZPpT35vADmsdAjykuLOQJC5Uu5e4Zu3oCXRO6M6aJo6SoCqm-YKbPJ2ikcF_dvrPHBTFk8zXU9eJai5Bzc");'></div>
+</td>
+<td class="px-4 py-3 text-gray-500 dark:text-[#92a4c9] text-sm">99.98% / 99.99%</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="w-full overflow-hidden rounded-full bg-gray-200 dark:bg-[#324467] h-1.5"><div class="h-full rounded-full bg-yellow-status" style="width: 98%;"></div></div>
+<p class="text-gray-700 dark:text-white text-sm font-medium">98%</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="inline-flex items-center gap-2 rounded-full bg-yellow-status/10 px-3 py-1 text-sm font-medium text-yellow-status">
+<div class="h-2 w-2 rounded-full bg-yellow-status"></div>
+                                                    At Risk
+                                                </div>
+</td>
+<td class="px-4 py-3">
+<span class="material-symbols-outlined text-green-status align-middle">arrow_upward</span>
+</td>
+<td class="px-4 py-3 text-gray-500 dark:text-[#92a4c9] text-sm">5 minutes ago</td>
+</tr>
+<tr>
+<td class="px-4 py-3 text-gray-900 dark:text-white text-sm font-medium">Bugs Closed per Sprint</td>
+<td class="px-4 py-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8" data-alt="Avatar of Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAr6IDKHOIT57WPmhzulk_91icTOOZ2UX-nFoHPICgEqyp49Kk5Nc4qv6ujTPVFZcbPbVGFX38iK-iN9myrrN5bH8oAbM40AR1E_ILJbULtNWwbf-yzVd61J-5FC_qe2UJC_HHuTju6vrVPH_K9hXf51rhCk6QCdXyJe0kT52xtEszLNt1GbPMvAj1YHo6JzYf72L3aa9cJ_Kse-3TdsNUvXhQtwJAmq2SdtMEZSovN3o9Qd0K3R-DFVyc3z_q6sQtzF8DDHG-ZM1c");'></div>
+</td>
+<td class="px-4 py-3 text-gray-500 dark:text-[#92a4c9] text-sm">8 / 10</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="w-full overflow-hidden rounded-full bg-gray-200 dark:bg-[#324467] h-1.5"><div class="h-full rounded-full bg-red-status" style="width: 80%;"></div></div>
+<p class="text-gray-700 dark:text-white text-sm font-medium">80%</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="inline-flex items-center gap-2 rounded-full bg-red-status/10 px-3 py-1 text-sm font-medium text-red-status">
+<div class="h-2 w-2 rounded-full bg-red-status"></div>
+                                                    Off Track
+                                                </div>
+</td>
+<td class="px-4 py-3">
+<span class="material-symbols-outlined text-gray-500 align-middle">horizontal_rule</span>
+</td>
+<td class="px-4 py-3 text-gray-500 dark:text-[#92a4c9] text-sm">1 day ago</td>
+</tr>
+<tr>
+<td class="px-4 py-3 text-gray-900 dark:text-white text-sm font-medium">Customer Ticket Resolution Time</td>
+<td class="px-4 py-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8" data-alt="Avatar of Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZBypX5yoJs9ueVza2V9kQuEdbEdgKgJUJcPMMvCCAup0bRzrLiHG9DgxKb9-vxRbOIqa05yLukVqe4WFJW6LKv8UFWVhfDVYjNeAZkTSo-XfykdZhM-EvfUTBF_SfzXGWy_sjuByk_jZ-j2njpiGWaG2Dz92HgvFuA-5OZXihoLLNNm6cOHvN6HZ2tHsUsOh_Y-S9ImVNS3N1i637Cj2-kx7LA7qjr0NnAzhvh_3CIhjeo_BxoWDG9eJaOSRQ_14AbLhWlskAB_4");'></div>
+</td>
+<td class="px-4 py-3 text-gray-500 dark:text-[#92a4c9] text-sm">2.1 days / &lt; 2 days</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="w-full overflow-hidden rounded-full bg-gray-200 dark:bg-[#324467] h-1.5"><div class="h-full rounded-full bg-yellow-status" style="width: 95%;"></div></div>
+<p class="text-gray-700 dark:text-white text-sm font-medium">95%</p>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="inline-flex items-center gap-2 rounded-full bg-yellow-status/10 px-3 py-1 text-sm font-medium text-yellow-status">
+<div class="h-2 w-2 rounded-full bg-yellow-status"></div>
+                                                    At Risk
+                                                </div>
+</td>
+<td class="px-4 py-3">
+<span class="material-symbols-outlined text-green-status align-middle">arrow_upward</span>
+</td>
+<td class="px-4 py-3 text-gray-500 dark:text-[#92a4c9] text-sm">8 hours ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

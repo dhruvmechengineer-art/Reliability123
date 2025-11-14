@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProTrack - Project &amp; Task Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "status-critical": "#D0021B",
+              "status-high": "#F5A623",
+              "status-medium": "#F8E71C",
+              "status-low": "#4A90E2",
+              "status-done": "#7ED321",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#333] dark:text-gray-200">
+<div class="flex h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex h-full w-64 flex-col bg-white dark:bg-[#111722] p-4 border-r border-gray-200 dark:border-[#232f48]">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-3 py-2">
+<span class="material-symbols-outlined text-primary text-3xl">data_usage</span>
+<h1 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">ProTrack</h1>
+</div>
+</div>
+<nav class="mt-8 flex flex-1 flex-col justify-between">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 dark:bg-[#232f48] px-3 py-2 text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-[#92a4c9] hover:bg-gray-100 dark:hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">task_alt</span>
+<p class="text-sm font-medium leading-normal">All Tasks</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-[#92a4c9] hover:bg-gray-100 dark:hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">warning</span>
+<p class="text-sm font-medium leading-normal">Risks</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-[#92a4c9] hover:bg-gray-100 dark:hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">bar_chart_4_bars</span>
+<p class="text-sm font-medium leading-normal">KPIs</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-[#92a4c9] hover:bg-gray-100 dark:hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">file_upload</span>
+<p class="text-sm font-medium leading-normal">Reports</p>
+</a>
+</div>
+</nav>
+</aside>
+<!-- Main Content -->
+<div class="flex flex-1 flex-col overflow-y-auto">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-[#232f48] bg-white dark:bg-[#111722] px-6 py-3 sticky top-0 z-10">
+<div class="flex flex-1 items-center gap-8">
+<label class="relative flex min-w-40 max-w-sm flex-col">
+<div class="flex h-10 w-full flex-1 items-stretch">
+<div class="text-gray-400 dark:text-[#92a4c9] flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border-none bg-transparent text-gray-900 dark:text-white focus:outline-0 focus:ring-0 placeholder:text-gray-400 dark:placeholder:text-[#92a4c9] px-2 text-base font-normal leading-normal" placeholder="Search projects, tasks..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Project/Task</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-transparent text-gray-600 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-gray-100 dark:hover:bg-[#232f48]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2x6WCcvgULbcUmVGQ-7Oc5yZQwPBCHvdzg1wKbJ0exCwfBOn_UOJV8RYn1aNPT-E0ZlNfqZ8Nv931rsDnELp6X0Qje__LTg2sX_m9-6YmjRPLEViwFGaCM__eZHzngY5oypic4tPVIGT_QnWqQUT45GgHEeToDs5Uw-VeTZKTZ7lTcNFGCWpDvAyMobRLUYq-b6zpJLRn2rfIlBStbT_DkNGxmVfgc75CVuYODEkTRryhsY7PZHVKnAJJcFiea2r366WSC3K0mGc");'></div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 p-6">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-3 mb-6">
+<p class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Project &amp; Task Overview</p>
+</div>
+<!-- ToolBar & Chips Container -->
+<div class="mb-4">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<!-- Chips -->
+<div class="flex gap-3 overflow-x-auto">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#232f48] pl-4 pr-2 border border-gray-200 dark:border-transparent">
+<p class="text-gray-700 dark:text-white text-sm font-medium leading-normal">Status: All</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#232f48] pl-4 pr-2 border border-gray-200 dark:border-transparent">
+<p class="text-gray-700 dark:text-white text-sm font-medium leading-normal">Priority: All</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#232f48] pl-4 pr-2 border border-gray-200 dark:border-transparent">
+<p class="text-gray-700 dark:text-white text-sm font-medium leading-normal">Owner: All</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-white text-base">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#232f48] pl-4 pr-2 border border-gray-200 dark:border-transparent">
+<p class="text-gray-700 dark:text-white text-sm font-medium leading-normal">Project: All</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-white text-base">expand_more</span>
+</button>
+</div>
+<!-- ToolBar -->
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary/10 dark:bg-[#232f48] text-primary dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+<span class="material-symbols-outlined text-base">view_kanban</span>
+<span class="truncate">Kanban View</span>
+</button>
+<button class="p-2 text-gray-600 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-[#232f48]">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 text-gray-600 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-[#232f48]">
+<span class="material-symbols-outlined">upload</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Data Table -->
+<div class="overflow-x-auto bg-white dark:bg-[#111722] rounded-lg border border-gray-200 dark:border-[#232f48]">
+<table class="w-full text-left text-sm">
+<thead class="bg-gray-50 dark:bg-[#1A2233] text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+<tr>
+<th class="p-4 w-4" scope="col">
+<input class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary" type="checkbox"/>
+</th>
+<th class="px-6 py-3" scope="col">Task / Project Name</th>
+<th class="px-6 py-3" scope="col">Project</th>
+<th class="px-6 py-3" scope="col">Priority</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3" scope="col">Owner(s)</th>
+<th class="px-6 py-3" scope="col">Due Date</th>
+<th class="px-6 py-3 min-w-[200px]" scope="col">Progress</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-[#232f48]">
+<!-- Table Row 1 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-primary/5">
+<td class="p-4 w-4">
+<input class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">Develop new user onboarding flow</td>
+<td class="px-6 py-4">Phoenix Project</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-critical text-base">flag</span>
+<span class="font-medium text-status-critical">Critical</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">In Progress</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800 bg-center bg-no-repeat bg-cover" data-alt="Avatar of Sarah Lee" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFYmifnB_eaJhzx83dV55YhvAXKN_ce6ojEAQE31VAPbw8pkCuQw5pvbkHUB4e54PyqsLdto9JumvXynD3H-PQu8osVceEHVeXH_yAAg5QNxKcTykdqHe3l5q0BRqK8_hgPtWK32aj9BpbulYotiv2Er8xbHP3FtC1HqOmICnna50Q8Y9gSGO52ZheZelf-jdsM76oP-E1FqnT8gOUSSNpV7Bf_f9JwASnbvIrcLmQmTzjlrPwNyIKd5cONyGpyLFyxpITe58CUsQ');"></div>
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800 bg-center bg-no-repeat bg-cover" data-alt="Avatar of Mark Chen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwsfsVZGQCHxrWEPs0qToNAPlhSmFmJhtsDuoqKrLBfrZ2MrizdcHCf9xwjpoZWIC0HxY1j0lvPi4QxVXEvozUcG13r852p6VBiV_GeBw0kQgc5RZ53sV9opF8z6xp15TmDPVw6-Pk1-e8xhQAu3vuDlQFSAowip19fTo2zyaFzcxwcd9ABnOVU_shcFstDMCGIppPcKP_UBp8WKrgyGxOrKWJxcIL_RDTAxoqdvWt_O_hClIurxjyltew65dI23zCR5_6fvyU6sY');"></div>
+</div>
+</td>
+<td class="px-6 py-4">2024-08-15</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+<span class="text-xs font-medium">45%</span>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-primary/5">
+<td class="p-4 w-4">
+<input class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">API Integration for Payment Gateway</td>
+<td class="px-6 py-4">Phoenix Project</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-high text-base">flag</span>
+<span class="font-medium text-status-high">High</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-status-done/20 px-2.5 py-0.5 text-xs font-medium text-status-done dark:text-status-done/90">Done</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800 bg-center bg-no-repeat bg-cover" data-alt="Avatar of Emily Carter" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAU30W_CKFG59KCQDZj3cfhXRMi_4VjNfP24XVwu5PKzMrkcaHkMo-Exz-AFcUcA8xnuV-vvHPKy9ce0aK2_KNwR9zmkasgiPrsTaavXC9YtG7Q9xyfW04qxBrh-4d2ZcBqWhmcRARXtRAzlMoQjTamDLEFSD0patBI8dXZvKU4XRWttgZPFqBfEy_iDiZ7icmv0-z127gqf84AMt4Ty1iPeQC2Yv6zuIwGbnoYe9zBSBchAH2ymBN54yVVqJ6fQZQI0DmsIRidPMg');"></div>
+</div>
+</td>
+<td class="px-6 py-4">2024-07-30</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+<div class="bg-status-done h-2 rounded-full" style="width: 100%"></div>
+</div>
+<span class="text-xs font-medium">100%</span>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-primary/5">
+<td class="p-4 w-4">
+<input class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">Q3 Marketing Campaign Launch</td>
+<td class="px-6 py-4">Orion Initiative</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-high text-base">flag</span>
+<span class="font-medium text-status-high">High</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300">Blocked</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800 bg-center bg-no-repeat bg-cover" data-alt="Avatar of David Kim" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAE1p0tdoisqZoluV5E2n1Qn8EVqeqgb9E3qbZIzZED_XTVi8yYNczoaxr8uVpJaDdYLGIULfZ6KScHRyUS8q0Ta908TbbWskMzAwBvM6_lql1NZCzQwgnBn1l9wGdstYLcNVHNqzLO-67WtdoMC5pv2b3-wUIPint4eHGUbxkw012jVlVONqmHKhORaqOvZtmW48WTIAcsWAH59VJGWzSAoGRi_S1c4AGQkT0aDPCRKv1vPOt2jtYoECVdvyqKe6-ddaggnKDgVvs');"></div>
+</div>
+</td>
+<td class="px-6 py-4">2024-09-01</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+<div class="bg-primary h-2 rounded-full" style="width: 70%"></div>
+</div>
+<span class="text-xs font-medium">70%</span>
+</div>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-primary/5">
+<td class="p-4 w-4">
+<input class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">Update Customer Support Docs</td>
+<td class="px-6 py-4">Internal Ops</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-medium text-base">flag</span>
+<span class="font-medium text-status-medium">Medium</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">To Do</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800 bg-center bg-no-repeat bg-cover" data-alt="Avatar of Jessica Rodriguez" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKxLFpnq9FeAv0GGAMZg-wewb3olD2lmUhORy9TvXsCIZtz5ifNoJjsuq7gWnaYjgqug7mq50IbACu2rrS4OTFOT-RNV7tZEYtx6uOCnkPkCQK-iWlloGWALjNiccilH107fTvLWY138xlrKamqW_WbnvYhqwTB-JTTRJX5vJ2IYsIK0oA0RAtYq_BzA-igx1_86E8HlVGyVsrtiyMtgc4YpdfeTl1LzOsnzSixtMq5CwOODqTMdWjY9MRkZ6wi9DFAY1kflLIbB0');"></div>
+</div>
+</td>
+<td class="px-6 py-4">2024-08-25</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+<div class="bg-primary h-2 rounded-full" style="width: 0%"></div>
+</div>
+<span class="text-xs font-medium">0%</span>
+</div>
+</td>
+</tr>
+<!-- Table Row 5 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-primary/5">
+<td class="p-4 w-4">
+<input class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary focus:ring-2 focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">Server Migration to AWS</td>
+<td class="px-6 py-4">Infrastructure</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-low text-base">flag</span>
+<span class="font-medium text-status-low">Low</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">In Progress</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800 bg-center bg-no-repeat bg-cover" data-alt="Avatar of Mark Chen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPDqpLKnty5QzP-KHQVAZFJNokU1tQERdexJ4gKd4Eb9O17McY6Dusz5fwuo36a8rdEHgkdZQzSbUqMO-jdmAjdCreiPZEOT0XpNmSXYfL782xIWEGr3SY9gvHWaKlKtaAXQ2assSRtsBL1mMsH2_jcgdZu-fQjHYq-HisSqgoi641aEO32ZJpEWfkDqmZQEWpscGxj6PqFn25JJMCznYABcvVKWmCutvhc4UjsLpg-0bZ878GF8WT_5e5HOq4OOS6rlWZQSfA72A');"></div>
+</div>
+</td>
+<td class="px-6 py-4">2024-10-01</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+<div class="bg-primary h-2 rounded-full" style="width: 20%"></div>
+</div>
+<span class="text-xs font-medium">20%</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Log a New Risk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4A90E2",
+            "background-light": "#F4F5F7",
+            "background-dark": "#101622",
+            "text-light": "#333333",
+            "text-dark": "#ffffff",
+            "border-light": "#D8DCE3",
+            "border-dark": "#324467",
+            "card-light": "#ffffff",
+            "card-dark": "#192233",
+            "placeholder-light": "#9ca3af",
+            "placeholder-dark": "#92a4c9",
+            "error": "#D0021B",
+            "warning": "#F5A623",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+<div class="w-full max-w-4xl">
+<div class="flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="p-4">
+<p class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em]">Log a New Risk</p>
+</div>
+<!-- Form Container -->
+<div class="flex flex-col gap-8 rounded-xl bg-card-light dark:bg-card-dark p-6 sm:p-8 border border-border-light dark:border-border-dark">
+<!-- Section 1: Identification -->
+<div class="flex flex-col gap-6">
+<h2 class="text-xl font-bold text-text-light dark:text-text-dark">Identification</h2>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col w-full">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Risk Title</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-[15px] text-base font-normal leading-normal" placeholder="Enter a short, descriptive summary of the risk" value=""/>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Area</p>
+<div class="relative w-full">
+<select class="form-select flex w-full min-w-0 flex-1 appearance-none resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-[15px] text-base font-normal leading-normal pr-10">
+<option disabled="" selected="">Select an area</option>
+<option>Financial</option>
+<option>Operational</option>
+<option>Technical</option>
+<option>Compliance</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Project</p>
+<div class="relative w-full">
+<select class="form-select flex w-full min-w-0 flex-1 appearance-none resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-[15px] text-base font-normal leading-normal pr-10">
+<option disabled="" selected="">Select a project</option>
+<option>Project Phoenix</option>
+<option>Quantum Leap Initiative</option>
+<option>Odyssey Platform</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Section 2: Impact Analysis -->
+<div class="flex flex-col gap-6">
+<h2 class="text-xl font-bold text-text-light dark:text-text-dark">Impact Analysis</h2>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col w-full">
+<div class="flex items-center gap-2 pb-2">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Potential Consequences</p>
+<span class="material-symbols-outlined text-gray-400 text-base cursor-pointer" title="Describe the potential impact if this risk occurs. Consider financial, operational, and reputational effects.">help_outline</span>
+</div>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark min-h-36 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-[15px] text-base font-normal leading-normal" placeholder="Describe the potential impact if this risk occurs..."></textarea>
+</label>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Urgency Level</p>
+<div class="flex flex-wrap gap-2">
+<label class="flex-1">
+<input class="sr-only peer" name="urgency" type="radio" value="low"/>
+<div class="w-full cursor-pointer text-center rounded-lg border border-border-light dark:border-border-dark p-3 text-text-light dark:text-text-dark peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-colors">Low</div>
+</label>
+<label class="flex-1">
+<input class="sr-only peer" name="urgency" type="radio" value="medium"/>
+<div class="w-full cursor-pointer text-center rounded-lg border border-border-light dark:border-border-dark p-3 text-text-light dark:text-text-dark peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-colors">Medium</div>
+</label>
+<label class="flex-1">
+<input class="sr-only peer" name="urgency" type="radio" value="high"/>
+<div class="w-full cursor-pointer text-center rounded-lg border border-border-light dark:border-border-dark p-3 text-text-light dark:text-text-dark peer-checked:bg-warning peer-checked:text-white peer-checked:border-warning transition-colors">High</div>
+</label>
+<label class="flex-1">
+<input class="sr-only peer" name="urgency" type="radio" value="critical"/>
+<div class="w-full cursor-pointer text-center rounded-lg border border-border-light dark:border-border-dark p-3 text-text-light dark:text-text-dark peer-checked:bg-error peer-checked:text-white peer-checked:border-error transition-colors">Critical</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Section 3: Mitigation & Ownership -->
+<div class="flex flex-col gap-6">
+<h2 class="text-xl font-bold text-text-light dark:text-text-dark">Mitigation &amp; Ownership</h2>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col w-full">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Actions Taken / Proposed Plan</p>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark min-h-36 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-[15px] text-base font-normal leading-normal" placeholder="Detail the steps to mitigate this risk..."></textarea>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Assigned To</p>
+<div class="relative w-full">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-[15px] text-base font-normal leading-normal pl-10" placeholder="Search for a team member" value=""/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+</div>
+<p class="text-error text-sm mt-1">This field is required.</p>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Status</p>
+<div class="relative w-full">
+<select class="form-select flex w-full min-w-0 flex-1 appearance-none resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-[15px] text-base font-normal leading-normal pr-10">
+<option>Open</option>
+<option>In Progress</option>
+<option>Mitigated</option>
+<option>Closed</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="flex flex-col-reverse sm:flex-row justify-end gap-3 p-4">
+<button class="flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-gray-200 dark:bg-gray-700 text-text-light dark:text-text-dark font-medium transition-colors hover:bg-gray-300 dark:hover:bg-gray-600">Cancel</button>
+<button class="flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-primary text-white font-medium transition-colors hover:bg-primary/90">Log Risk</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

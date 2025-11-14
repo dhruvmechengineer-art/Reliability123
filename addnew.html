@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create New Project</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "success": "#50E3C2",
+              "warning": "#F5A623",
+              "critical": "#D0021B",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111827] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex flex-1">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col bg-[#192233] p-4 text-white">
+<div class="flex h-full flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="ProjectCo company logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBR71digCrugOKyeELb_RBMDawe_L4L34jflFrqmOsEzT7ZxLsUef2AKHD_o5ArqvNGBXHMKmL9_cATDjUt1Qyu4P1EmHHcH75ZWHuGcozUpuaiZSFev8IKYnRfa8F48JZBE8dQdDflSUcGkvGMKN5qGkHqg5IxFdArr7J6Xxo5bAzhzMKRxc1oqoX4FbvKGmKh0IxXW160ovfyF7FR32_VZxKbyoZtmTQLmFR2htIx7Dz3QZ5ZIsLsy0VwLfEOBKUUNf68JEnDa8g");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">ProjectCo</h1>
+<p class="text-[#92a4c9] text-sm font-normal leading-normal">Team Workspace</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-[24px]">home</span>
+<p class="text-white text-sm font-medium leading-normal">Home</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary px-3 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-[24px]" style="font-variation-settings: 'FILL' 1;">folder</span>
+<p class="text-white text-sm font-medium leading-normal">Projects</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-[24px]">checklist</span>
+<p class="text-white text-sm font-medium leading-normal">Tasks</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-[24px]">warning</span>
+<p class="text-white text-sm font-medium leading-normal">Risks</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-[24px]">trending_up</span>
+<p class="text-white text-sm font-medium leading-normal">KPIs</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Project</span>
+</button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-[24px]">settings</span>
+<p class="text-white text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-[24px]">help</span>
+<p class="text-white text-sm font-medium leading-normal">Help</p>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between gap-3 pb-8">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white">Create New Project / Task</p>
+<p class="text-base font-normal leading-normal text-gray-500 dark:text-[#92a4c9]">Fill in the details below to create a new initiative.</p>
+</div>
+</div>
+<div class="space-y-12">
+<!-- Section 1: Basic Details -->
+<div class="bg-white dark:bg-[#192233]/50 p-6 rounded-xl">
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] border-b border-gray-200 dark:border-[#324467] pb-4">Basic Details</h2>
+<div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+<div class="sm:col-span-2">
+<label class="flex flex-col">
+<p class="text-base font-medium leading-normal pb-2 text-gray-900 dark:text-white">Project/Task Title</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324467] bg-white dark:bg-[#192233] h-14 placeholder:text-gray-400 dark:placeholder:text-[#92a4c9] p-[15px] text-base font-normal leading-normal" placeholder="Enter a clear and concise title" value=""/>
+</label>
+</div>
+<div class="sm:col-span-2">
+<label class="flex flex-col">
+<p class="text-base font-medium leading-normal pb-2 text-gray-900 dark:text-white">Detailed Description</p>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324467] bg-white dark:bg-[#192233] min-h-36 placeholder:text-gray-400 dark:placeholder:text-[#92a4c9] p-[15px] text-base font-normal leading-normal" placeholder="Provide a detailed description of the project or task"></textarea>
+</label>
+</div>
+<div>
+<label class="block text-base font-medium leading-normal pb-2 text-gray-900 dark:text-white" for="project-owner">Project Owner</label>
+<select class="form-select flex w-full min-w-0 flex-1 rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324467] bg-white dark:bg-[#192233] h-14 p-[15px] text-base font-normal leading-normal" id="project-owner">
+<option>Select Owner</option>
+<option>Jane Doe</option>
+<option>John Smith</option>
+</select>
+</div>
+<div>
+<label class="block text-base font-medium leading-normal pb-2 text-gray-900 dark:text-white" for="team">Team</label>
+<select class="form-select flex w-full min-w-0 flex-1 rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324467] bg-white dark:bg-[#192233] h-14 p-[15px] text-base font-normal leading-normal" id="team">
+<option>Select Team</option>
+<option>Engineering</option>
+<option>Marketing</option>
+<option>Operations</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Section 2: Prioritization -->
+<div class="bg-white dark:bg-[#192233]/50 p-6 rounded-xl">
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] border-b border-gray-200 dark:border-[#324467] pb-4">Prioritization</h2>
+<div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<h3 class="text-base font-medium text-gray-900 dark:text-white">Business Impact</h3>
+<span class="material-symbols-outlined text-sm text-gray-400 dark:text-gray-500 cursor-help" title="Select the primary business impact of this initiative.">help_outline</span>
+</div>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer"><input class="form-radio text-primary focus:ring-primary/50 bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600" name="business-impact" type="radio"/><span>Production Loss Avoidance</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="form-radio text-primary focus:ring-primary/50 bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600" name="business-impact" type="radio"/><span>Cost Savings</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="form-radio text-primary focus:ring-primary/50 bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600" name="business-impact" type="radio"/><span>EHS Impact/Prevention</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="form-radio text-primary focus:ring-primary/50 bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600" name="business-impact" type="radio"/><span>Risk Mitigation Impact</span></label>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<h3 class="text-base font-medium text-gray-900 dark:text-white">Ease of Implementation</h3>
+<span class="material-symbols-outlined text-sm text-gray-400 dark:text-gray-500 cursor-help" title="Estimate the effort required to complete this initiative.">help_outline</span>
+</div>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer"><input class="form-radio text-primary focus:ring-primary/50 bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600" name="ease" type="radio"/><span>Easy</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="form-radio text-primary focus:ring-primary/50 bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600" name="ease" type="radio"/><span>Medium</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="form-radio text-primary focus:ring-primary/50 bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600" name="ease" type="radio"/><span>Hard</span></label>
+</div>
+</div>
+<div class="flex flex-col justify-center items-center bg-gray-100 dark:bg-[#101622] rounded-lg p-6 text-center">
+<h3 class="text-base font-medium text-gray-900 dark:text-white">Action Priority</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Calculated automatically</p>
+<div class="mt-4 flex flex-col items-center justify-center gap-2">
+<span class="inline-flex items-center rounded-full bg-critical/10 px-4 py-1 text-lg font-bold text-critical">Critical</span>
+<p class="text-xs text-gray-500 dark:text-gray-400">High Impact / Easy Implementation</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Timeline & Attachments -->
+<div class="bg-white dark:bg-[#192233]/50 p-6 rounded-xl">
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] border-b border-gray-200 dark:border-[#324467] pb-4">Timeline &amp; Attachments</h2>
+<div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+<div>
+<label class="block text-base font-medium leading-normal pb-2 text-gray-900 dark:text-white" for="start-date">Start Date</label>
+<input class="form-input flex w-full min-w-0 flex-1 rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324467] bg-white dark:bg-[#192233] h-14 p-[15px] text-base font-normal leading-normal" id="start-date" type="date"/>
+</div>
+<div>
+<label class="block text-base font-medium leading-normal pb-2 text-gray-900 dark:text-white" for="end-date">Target End Date</label>
+<input class="form-input flex w-full min-w-0 flex-1 rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324467] bg-white dark:bg-[#192233] h-14 p-[15px] text-base font-normal leading-normal" id="end-date" type="date"/>
+</div>
+<div class="sm:col-span-2">
+<label class="block text-base font-medium leading-normal pb-2 text-gray-900 dark:text-white" for="file-upload">Attachments</label>
+<div class="flex justify-center rounded-lg border border-dashed border-gray-300 dark:border-[#324467] px-6 py-10">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-500">upload_file</span>
+<div class="mt-4 flex text-sm leading-6 text-gray-600 dark:text-gray-400">
+<label class="relative cursor-pointer rounded-md font-semibold text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-primary/50 focus-within:ring-offset-2 dark:focus-within:ring-offset-[#101622] hover:text-primary/80" for="file-upload">
+<span>Upload a file</span>
+<input class="sr-only" id="file-upload" name="file-upload" type="file"/>
+</label>
+<p class="pl-1">or drag and drop</p>
+</div>
+<p class="text-xs leading-5 text-gray-600 dark:text-gray-400">PNG, JPG, PDF up to 10MB</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Actions -->
+<div class="flex items-center justify-end gap-x-4 pt-4">
+<button class="rounded-lg px-4 py-2 text-sm font-semibold text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10" type="button">Cancel</button>
+<button class="rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" type="submit">Create Project</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

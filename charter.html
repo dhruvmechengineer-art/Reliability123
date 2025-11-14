@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Charter Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col bg-white dark:bg-[#111722] p-4 border-r border-gray-200 dark:border-gray-800">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar for Eleanor Vance" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8nY0YGMN5TWuD8nux3mf0sWjzaVRmibr1DCRZjiljGNoUmhVV8zfrVKNADrhslQfNaaiENUo07uWs58arl93E9oBKYdxa32uAVuiQLrLSNn7r1dBIyooSI5E3rRNOJaW_TKry3YaeeAjo4KXL-VR68obPv1p0gOPFKfqilw614euaatH2yahNFOiJWQ1697uoROQbJpDPC5v0upR-7DhsPzC5NHF3yhKcqMUhLw-rUP2R_nrIv_IFsdg32fMxkXT99XBPG-xtPn0");'></div>
+<div class="flex flex-col">
+<h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Eleanor Vance</h1>
+<p class="text-gray-500 dark:text-[#92a4c9] text-sm font-normal leading-normal">Product Manager</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#232f48]" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-white">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-[#232f48]" href="#">
+<span class="material-symbols-outlined text-primary dark:text-white" style="font-variation-settings: 'FILL' 1;">folder</span>
+<p class="text-sm font-bold leading-normal text-primary dark:text-white">All Projects</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#232f48]" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-white">task_alt</span>
+<p class="text-sm font-medium leading-normal">Tasks</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#232f48]" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-white">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Reports</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#232f48]" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-white">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+<span class="truncate">New Project</span>
+</button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#232f48]" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-white">help_outline</span>
+<p class="text-sm font-medium leading-normal">Help</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#232f48]" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-white">logout</span>
+<p class="text-sm font-medium leading-normal">Log Out</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<div class="container mx-auto px-6 py-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 items-center">
+<a class="text-gray-500 dark:text-[#92a4c9] text-base font-medium leading-normal hover:text-primary" href="#">All Projects</a>
+<span class="text-gray-400 dark:text-[#92a4c9] text-base font-medium leading-normal">/</span>
+<a class="text-gray-500 dark:text-[#92a4c9] text-base font-medium leading-normal hover:text-primary" href="#">Project Alpha</a>
+<span class="text-gray-400 dark:text-[#92a4c9] text-base font-medium leading-normal">/</span>
+<span class="text-gray-900 dark:text-white text-base font-medium leading-normal">Charter</span>
+</div>
+<!-- Page Heading & Actions -->
+<div class="flex flex-wrap justify-between items-center gap-4 mt-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-4">
+<p class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Project Alpha Charter</p>
+<span class="inline-flex items-center rounded-full bg-amber-100 dark:bg-amber-500/20 px-3 py-1 text-xs font-medium text-amber-800 dark:text-amber-400">In Progress</span>
+</div>
+<p class="text-gray-500 dark:text-[#92a4c9] text-base font-normal leading-normal">ID: PROJ-00123</p>
+</div>
+<div class="flex flex-1 sm:flex-none gap-3 flex-wrap justify-start">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-[#232f48] text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 dark:hover:bg-[#2d3a54]">
+<span class="truncate">Export to PDF</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+<span class="truncate">Edit Charter</span>
+</button>
+<button class="flex w-10 h-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gray-200 dark:bg-[#232f48] text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 dark:hover:bg-[#2d3a54]">
+<span class="material-symbols-outlined text-base">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+<!-- Left Column -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Project Overview & Scope -->
+<div class="bg-white dark:bg-[#111722] p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Project Overview &amp; Scope</h2>
+<div class="mt-4 space-y-4 text-gray-600 dark:text-gray-400 text-base leading-relaxed prose prose-neutral dark:prose-invert max-w-none">
+<p><strong>Project Summary:</strong> A brief, one-paragraph executive summary detailing the project's main goals, expected outcomes, and its alignment with strategic business objectives. This project aims to revolutionize our customer onboarding experience.</p>
+<p><strong>Business Case:</strong> The "why" behind the project. It will address critical pain points in the current system, leading to a 20% increase in user retention and a 15% reduction in support calls, thereby improving overall customer satisfaction and operational efficiency.</p>
+<div>
+<strong>In-Scope Items:</strong>
+<ul class="list-disc pl-5 mt-1">
+<li>Redesigned user registration and login flow.</li>
+<li>Interactive onboarding tutorial for new users.</li>
+<li>Integration with the new CRM system for seamless data transfer.</li>
+</ul>
+</div>
+<div>
+<strong>Out-of-Scope Items:</strong>
+<ul class="list-disc pl-5 mt-1">
+<li>Mobile application development.</li>
+<li>Billing and subscription management overhaul.</li>
+<li>Multi-language support beyond English.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Success & Risks -->
+<div class="bg-white dark:bg-[#111722] p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Success &amp; Risks</h2>
+<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+<div>
+<h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Key Success Criteria (KPIs)</h3>
+<ol class="list-decimal pl-5 space-y-1">
+<li>Achieve a 95% user satisfaction score for the new onboarding flow.</li>
+<li>Reduce average onboarding time by 30%.</li>
+<li>Decrease support ticket volume related to account setup by 40%.</li>
+</ol>
+</div>
+<div>
+<h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">High-Level Risks</h3>
+<div class="flex items-start gap-2 p-3 bg-red-50 dark:bg-red-500/10 rounded-lg">
+<span class="material-symbols-outlined text-red-600 dark:text-red-400 mt-1">error_outline</span>
+<div>
+<p class="font-medium text-red-800 dark:text-red-300">High: CRM API instability causing data synchronization issues.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-2">
+<h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Assumptions &amp; Constraints</h3>
+<p>It is assumed that the new CRM API will be stable and fully documented by Q3. The project is constrained by a fixed budget of $250,000 and a deadline of December 15th.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Financials -->
+<div class="bg-white dark:bg-[#111722] p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Financials</h2>
+<div class="flex justify-center my-4">
+<div class="relative w-40 h-40">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<path class="stroke-current text-blue-200 dark:text-blue-800" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="stroke-current text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke-dasharray="60, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold text-gray-900 dark:text-white">$250k</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Total Budget</span>
+</div>
+</div>
+</div>
+<div class="text-sm text-gray-600 dark:text-gray-400 space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span>Capital Expense (CapEx)</span>
+</div>
+<span class="font-medium text-gray-800 dark:text-gray-200">$150,000</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-blue-200 dark:bg-blue-800"></span>
+<span>Operational Expense (OpEx)</span>
+</div>
+<span class="font-medium text-gray-800 dark:text-gray-200">$100,000</span>
+</div>
+</div>
+</div>
+<!-- Stakeholders & Team -->
+<div class="bg-white dark:bg-[#111722] p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Stakeholders &amp; Team</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Avatar for David Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_X56pCLKB3tqDTM2NG-LlJupViDo6BDMNXupVgR64WcJujEogzxjH5luHZrIRYmqK2m34J1U7cyMkUYw_IOo-bOSo9PckDcYTGiwXLm3jXO31tglqR4-_YsrBv541BzPkN4CWJ0CCYDMeo92VoS-IJX_Gm8ldi4MqsH6ZwtGqWyRKyEwr1_LGQ1ZYk5KYy64rKgDP1qHM3Y26u5tEqfdKRXcWotkOsoCg0NSSFnbB06BRiyxbIL1xKhev32WNwAcJzYJ9U1jtHig"/>
+<div>
+<p class="font-medium text-gray-800 dark:text-gray-200">David Chen</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Project Sponsor</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Avatar for Eleanor Vance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeisKTQXg3-N0NfAVb4YD777btaDpVhJNlleXzG_fiwdap4LX-PUGCfxNQ44gmLPmj5PRiwLzT5t2R82TGr3QAdLIBiA8VxNV40iFHJlZIDfTmkaFjM4pQEsdPHDk0reWOvwn7fdaZ0T5xXN9FhivS43CsH4QYBYdVnVIMGkcD0UXbL48r789SGxV3Rzwky09lK0rtbUSYn0BdAniKBl47lpqSuLFqv4sv1SHDoXmd-Dy31Bf1xiH6qaIvAD5Ul-VgpugQN-lkUt4"/>
+<div>
+<p class="font-medium text-gray-800 dark:text-gray-200">Eleanor Vance</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Project Manager</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Avatar for Marcus Rivera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2_47qcOIjw4TO_CFcwRaDEC6BonxfD7ZbepVm4omIXX1rKpYpLU7pyepI2LmsnPyeDJ-aGjR0N2OlV1_a5s7A3LVGe7Gokcqvvp8AlAxCp0NP_U_hlFDpvw3_HKMY4B6mydjR3qWBnRqk83SxVzYPhF0XNYKgB814juoxTCWN8plxmCkMaxf74EJg-mZr6aj28lZ6Zmb6YPisW23NuCn0SLe0P9eTtvTqPGVwJY7oQvAbwGpAN-Eamr8MhhSLAFEu6qXZPrSNY0w"/>
+<div>
+<p class="font-medium text-gray-800 dark:text-gray-200">Marcus Rivera</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Lead Engineer</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Avatar for Sofia Nguyen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz-2JD432XXX_Ok8aaQ2OBlah7b_O-Z6CN703B3SMY5viyNpERFmRPnlp1_9WiYhzx52cRpAMW6eTpr8w_9dSknw-btEdpQkec1zsMaLrPKbalwLNCbHpPY4zoY_TqemnzExGEUeQJcUB8VIZF1JSmLft5oisfCZej3uy3kSboDmVe-rL4IxhBiJnM7Znh5ScykQxfzL3VKCzi47_4Xj34lOrfoc2oGKvfEfmSzHt1SsdoQeOlOVfCAFhBbpN3uZWpqD9nXy1zQHU"/>
+<div>
+<p class="font-medium text-gray-800 dark:text-gray-200">Sofia Nguyen</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">UX/UI Designer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
